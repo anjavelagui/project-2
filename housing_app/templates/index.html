@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philadelphia Housing Dashboard</title>
+</head>
+<body>
+    <h1>test</h1>
+    <!-- Dropdown filters -->
+    <form action="">
+        <label for="year">Year: </label>
+        <select name="year" id="year">
+            <option value="no_selection" disabled selected value>Select a Year</option>
+          {% for item in year %}
+            <option value="{{ item }}">{{ item[0] }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+        <!-- Below is placeholder for now -->
+        <input type="submit" value="Apply Filters">
+    </form>
+
+</body>
+<!-- Script for d3 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<!-- Script for scatter plot -->
+<script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
+</html>
